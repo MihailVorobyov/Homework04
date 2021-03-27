@@ -1,8 +1,63 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" style="-fx-background-image: url(./images/background.png);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <TextArea fx:id="textArea" blendMode="DARKEN" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+            <effect>
+                <DropShadow color="#04045b" height="18.0" radius="7.75" width="15.0" />
+            </effect>
+            <font>
+                <Font name="Book Antiqua Bold" size="14.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </TextArea>
+        <HBox alignment="CENTER_LEFT">
+            <children>
+                <TextField fx:id="textField" onAction="#sendMsg" prefHeight="28.0" promptText="Введите сообщение..." HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="TEXT" />
+                    </cursor>
+                    <effect>
+                        <DropShadow color="#05038c" radius="8.5" width="15.0" />
+                    </effect>
+                </TextField>
+                <Button id="cssButton" fx:id="sendButton" onAction="#sendMsg" prefHeight="28.0" prefWidth="45.0" style="-fx-background-color: #CCF;" text="Send" textAlignment="CENTER">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <DropShadow color="#05038c" radius="8.5" width="15.0" />
+                    </effect>
+                    <font>
+                        <Font name="MingLiU_HKSCS" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>
